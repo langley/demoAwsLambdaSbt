@@ -38,5 +38,5 @@ The sbt-aws-lambda plug-in can be configured using sbt settings,
 | lambdaHandlers |              | Sequence of Lambda names to handler functions (for multiple lambda methods per project). Overrides `lambdaName` and `handlerName` if present. | 
 
 __Note:__ your aws credentials will be picked up as normal if you use
-  the [aws cli](https://aws.amazon.com/cli/) as plug-in uses the
-  [AWS SDK for Java](https://aws.amazon.com/sdk-for-java/). 
+  the [aws cli](https://aws.amazon.com/cli/) as sbt-aws-lambda plug-in
+  uses the [AWS SDK for Java](https://aws.amazon.com/sdk-for-java/).
