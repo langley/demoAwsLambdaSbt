@@ -1,23 +1,30 @@
 # demoAwsLambdaSbt
-An sbt based project that illustrates how simple it is to write and deploy AWS Lambda functions in Scala with sbt and its plugins
+An sbt based project that demonstrates how simple it is to write and
+  deploy [AWS Lambda functions](https://aws.amazon.com/lambda/) in
+  [scala](http://scala-lang.org/documentation/) 
+  thanks to [sbt](http://www.scala-sbt.org/0.13/docs/index.html)
+  and its plug-ins. 
 
 
-The scala code uses an S3 event and was described in
-[this article](https://aws.amazon.com/blogs/compute/writing-aws-lambda-functions-in-scala/)
-written by the Tim Wagner, AWS Lambda General Manager and Sean
-Reque an AWS Lambda Software Developer. 
+The scala code in this project was described in
+  [this article](https://aws.amazon.com/blogs/compute/writing-aws-lambda-functions-in-scala/)
+  written by Tim Wagner, AWS Lambda General Manager and Sean
+  Reque an AWS Lambda Software Developer. 
        
-The gilt.sbt plugin makes it VERY EASY to create and update the plugin!
+The [sbt-aws-lambda plug-in](https://github.com/gilt/sbt-aws-lambda)
+  developed by [gilt engineering](http://tech.gilt.com/) makes it
+  VERY EASY to create and update AWS Lambda functions. 
     
-To use this project, just do a createLambda or updateLambda from
-sbt. See the github project for the [sbt-aws-lambda plugin](https://github.com/gilt/sbt-aws-lambda)
-for details about Lambda settings.
+To use this project, just do a git clone and then use the
+  createLambda or updateLambda tasks from sbt. See the
+  [sbt-aws-lambda github project](https://github.com/gilt/sbt-aws-lambda)
+  for more details.
     
-sbt-aws-lambda can be configured using sbt settings, environment
-  variables or by reading user input at deploy time. For example if
-  you use this project as published, sbt will prompt you for the s3
-  bucket to use and query you as to the IAM role to use for your
-  lambda function. 
+The sbt-aws-lambda plug-in can be configured using sbt settings,
+  environment variables or by reading user input at deploy time. For
+  example if you use this project as published, sbt will prompt you
+  for the s3 bucket to use and query you as to the IAM role to use for
+  your lambda function.
 
 | sbt setting   |      Environment variable      |  Description |
 |:----------|:-------------:|:------|
@@ -29,3 +36,7 @@ sbt-aws-lambda can be configured using sbt settings, environment
 | awsLambdaTimeout |            | The Lambda timeout in seconds (1-300). Defaults to AWS default. |
 | awsLambdaMemory |             | The amount of memory in MB for the Lambda function (128-1536, multiple of 64). Defaults to AWS default. |
 | lambdaHandlers |              | Sequence of Lambda names to handler functions (for multiple lambda methods per project). Overrides `lambdaName` and `handlerName` if present. | 
+
+__Note:__ your aws credentials will be picked up as normal if you use
+  the [aws cli](https://aws.amazon.com/cli/) as plug-in uses the
+  [AWS SDK for Java](https://aws.amazon.com/sdk-for-java/). 
