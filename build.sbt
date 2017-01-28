@@ -10,7 +10,7 @@ lazy val root = (project in file(".")).
     retrieveManaged := true,
     awsLambdaMemory := Some(192),
     awsLambdaTimeout := Some(30),
-    lambdaHandlers := Seq("awsLambdSbt_getSourceBuckets" -> "example.Main::getSourceBuckets"),
+    lambdaHandlers := Seq("awsLambdSbt_respondToAwsS3PutEvent" -> "example.Main::respondToAwsS3PutEvent"),
     libraryDependencies += "com.amazonaws" % "aws-lambda-java-core" % "1.0.0",
     libraryDependencies += "com.amazonaws" % "aws-lambda-java-events" % "1.0.0"
   )
